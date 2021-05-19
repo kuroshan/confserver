@@ -26,6 +26,13 @@ zuul:
       service-id: MS-HR-EMPLOYEES
       path: /hr/payroll/**
       strip-prefix: true
+    ms-human-resources-security:
+      service-id: MS-HR-SECURITY-SERVICE
+      path: /hr/authentication/**
+      strip-prefix: true
+      sensitive-headers:
+        - Cookie
+        - Set-Cookie
 
 management:
   endpoints:
