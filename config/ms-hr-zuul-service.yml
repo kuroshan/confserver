@@ -8,7 +8,7 @@ eureka:
   client:
     registryFetchIntervalSeconds: 1
     serviceUrl:
-      defaultZone: http://localhost:8001/eureka/
+      defaultZone: ${SPRING_DISCOVERY_SERVER_URI}
 
 zuul:
   ignoredServices: '*'
@@ -33,6 +33,10 @@ zuul:
       sensitive-headers:
         - Cookie
         - Set-Cookie
+
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 5000
 
 management:
   endpoints:
